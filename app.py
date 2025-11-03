@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.set_page_config(page_title="ZAACO Cost Tracking System", layout="wide")
+st.set_page_config(page_title="ZAACO Price Tracking System", layout="wide")
 st.title("ZAACO价格表")
 
 # ---------- 仓库里的 Excel 文件 ----------
@@ -44,6 +44,7 @@ except ImportError as e:
 except Exception as e:
     st.error("程序运行出错，请查看详细日志")
     st.write(str(e))
+
 
 
 
