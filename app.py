@@ -15,7 +15,7 @@ try:
     st.subheader("Cost detail")
 
     # ---------- 独立搜索输入 ----------
-    search_term = st.text_input("搜索型号Enter model number to search", "")
+    search_term = st.text_input("Enter model number to search", "")
 
     # ---------- 利润和汇率输入 ----------
     st.sidebar.header("价格计算设置")
@@ -44,6 +44,7 @@ except ImportError as e:
 except Exception as e:
     st.error("程序运行出错，请查看详细日志")
     st.write(str(e))
+
 
 
 
