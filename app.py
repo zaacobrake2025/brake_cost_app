@@ -12,7 +12,7 @@ try:
     # 读取 Excel
     df = pd.read_excel(excel_file)
 
-    st.subheader("Cost detail")
+    st.subheader("Detail")
 
     # ---------- 独立搜索输入 ----------
     search_term = st.text_input("Enter model number to search", "")
@@ -44,6 +44,7 @@ except ImportError as e:
 except Exception as e:
     st.error("程序运行出错，请查看详细日志")
     st.write(str(e))
+
 
 
 
