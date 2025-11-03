@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import os
 
-st.set_page_config(page_title="刹车片成本查询", layout="wide")
+st.set_page_config(page_title="华莱刹车片成本查询", layout="wide")
 
 st.title("ZAACO成本查询系统")
 
@@ -21,4 +21,5 @@ except ImportError as e:
 except Exception as e:
     st.error("程序运行出错，请查看详细日志")
     st.write(str(e))
+
 
