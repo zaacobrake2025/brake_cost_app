@@ -18,7 +18,7 @@ try:
     search_term = st.text_input("Enter model number to search", "")
 
     # ---------- 利润和汇率输入 ----------
-    st.sidebar.header("价格计算设置Price Calculation Setting")
+    st.sidebar.header("价格计算设置     Price Calculation Setting")
     profit_percent = st.sidebar.number_input("利润率 margin (%)", min_value=0.0, value=15.0, step=0.5)
     exchange_rate = st.sidebar.number_input("汇率 currency(RMB → USD)", min_value=0.0, value=7.1, step=0.01)
 
@@ -44,6 +44,7 @@ except ImportError as e:
 except Exception as e:
     st.error("程序运行出错，请查看详细日志")
     st.write(str(e))
+
 
 
 
