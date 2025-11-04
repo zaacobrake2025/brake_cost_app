@@ -9,7 +9,7 @@ st.title("zaaco刹车片成本查询系统")
 default_excel_file = os.path.join(os.path.dirname(__file__), "cost.xlsx")
 
 # ---------- 上传区域 ----------
-st.sidebar.header("📤 数据来源设置 Data sources")
+st.sidebar.header("数据来源设置 Data sources")
 uploaded_file = st.sidebar.file_uploader("上传新的 成本Excel 文件（可选）Upload a new Cost Excel file (optional)", type=["xlsx"])
 
 # 读取 Excel：优先使用上传文件，否则用默认仓库文件
@@ -21,7 +21,7 @@ else:
     df = pd.read_excel(default_excel_file)
 
 # ---------- 利润和汇率设置 ----------
-st.sidebar.header("💰 价格计算设置")
+st.sidebar.header(" 价格计算设置Price Calculation Settings")
 profit_percent = st.sidebar.number_input("利润率margin (%)", min_value=0.0, value=15.0, step=0.5)
 exchange_rate = st.sidebar.number_input("汇率 currency(RMB → USD)", min_value=0.0, value=7.1, step=0.01)
 
@@ -45,6 +45,7 @@ st.subheader("📊 成本表内容")
 st.dataframe(filtered_df)
 
 st.caption("💡 提示：可在侧边栏上传新 Excel 文件进行临时计算，刷新页面后将恢复默认文件。A new Excel file can be uploaded in the sidebar for temporary calculations, and the default file will be restored when the page is refreshed.")
+
 
 
 
