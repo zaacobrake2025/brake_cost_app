@@ -9,8 +9,8 @@ st.title("zaaco刹车片成本查询系统")
 default_excel_file = os.path.join(os.path.dirname(__file__), "cost.xlsx")
 
 # ---------- 上传区域 ----------
-st.sidebar.header("📤 数据来源设置")
-uploaded_file = st.sidebar.file_uploader("上传新的 成本Excel 文件（可选）", type=["xlsx"])
+st.sidebar.header("📤 数据来源设置 Data sources")
+uploaded_file = st.sidebar.file_uploader("上传新的 成本Excel 文件（可选）Upload a new Cost Excel file (optional)", type=["xlsx"])
 
 # 读取 Excel：优先使用上传文件，否则用默认仓库文件
 if uploaded_file is not None:
@@ -44,7 +44,8 @@ else:
 st.subheader("📊 成本表内容")
 st.dataframe(filtered_df)
 
-st.caption("💡 提示：可在侧边栏上传新 Excel 文件进行临时计算，刷新页面后将恢复默认文件。")
+st.caption("💡 提示：可在侧边栏上传新 Excel 文件进行临时计算，刷新页面后将恢复默认文件。A new Excel file can be uploaded in the sidebar for temporary calculations, and the default file will be restored when the page is refreshed.")
+
 
 
 
