@@ -17,13 +17,13 @@ if uploaded_file is not None:
     st.sidebar.success("✅ 使用已上传文件")
     df = pd.read_excel(uploaded_file)
 else:
-    st.sidebar.info("📂 使用仓库内的默认 cost.xlsx")
+    st.sidebar.info("📂 目前默认10月22日的报价 cost.xlsx")
     df = pd.read_excel(default_excel_file)
 
 # ---------- 利润和汇率设置 ----------
 st.sidebar.header("💰 价格计算设置")
-profit_percent = st.sidebar.number_input("利润率 (%)", min_value=0.0, value=15.0, step=0.5)
-exchange_rate = st.sidebar.number_input("汇率 (RMB → USD)", min_value=0.0, value=7.1, step=0.01)
+profit_percent = st.sidebar.number_input("利润率margin (%)", min_value=0.0, value=15.0, step=0.5)
+exchange_rate = st.sidebar.number_input("汇率 currency(RMB → USD)", min_value=0.0, value=7.1, step=0.01)
 
 # ---------- 搜索功能 ----------
 search_term = st.text_input("🔍 搜索型号或关键字", "")
@@ -45,6 +45,7 @@ st.subheader("📊 成本表内容")
 st.dataframe(filtered_df)
 
 st.caption("💡 提示：可在侧边栏上传新 Excel 文件进行临时计算，刷新页面后将恢复默认文件。")
+
 
 
 
